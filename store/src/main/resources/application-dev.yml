@@ -1,0 +1,21 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: store
+  datasource:
+    url: jdbc:mysql://localhost:3306/deploy?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: ahmet
+    hikari:
+      connection-timeout: 3000000
+    driverClassName: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+  cloud:
+    discovery:
+      enabled: true
